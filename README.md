@@ -1,6 +1,5 @@
 # oscp-resources
-2025 OSCP checklists for an easy pass
-
+2025 OSCP checklists and methodology for an easy pass.
 Paste into obsidian for easy use.
 
 Table of contents:
