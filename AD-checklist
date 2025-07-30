@@ -1,0 +1,46 @@
+- [ ] run nmap scan on the external host and identify valid protocols
+- [ ] identify entry points with given creds (`smb`/`winrm`/`wmi`/others)
+- get inside the host:
+	- [ ]  run tunneling with ligolo-ng
+		- [ ] Powershell scripts, history (`psreadline`, other methods)
+		- [ ] Command history (`doskey /history`)
+		- [ ] Credential manager (`cmdkey /list`)
+		- [ ] Registry entries (`reg query`)
+		- [ ] Sensitive files (`docx`, `txt`, others)
+		- [ ] Programs, services and their config files (`inetpub`/`Program Files`/others)
+		- [ ] Internal databases with credentials inside (`netstat`/`mysqldump.exe`, etc.)
+		- [ ] Password databases (`kdbx`)
+		- [ ] Filesystem (`c:\users\dave\passwords.txt`, etc.)
+		- [ ] Users `%APPDATA%` with config files or others
+		- [ ] Recycle bin (`$Recycle.Bin`)
+		- [ ] `Unattend.xml` files with b64 passwords
+		- [ ] Wifi passwords via `netsh`
+		- [ ] `Sticky Notes` passwords 
+		- [ ] Look for alternate data streams
+		- [ ] Password stored in saved sessions (`PuTTY`, `WinSCP`, `FileZilla`, others)
+		- [ ] (admin req.) dump `SAM`, `LSA`, `LSASS`, `DPAPI`, `LAPS` others 
+		- [ ] (admin req.) look for `--loggedon-users` and try to impersonate
+		- [ ] (GUI req.) Passwords stored in Key Manager
+- run nmap scan on internal subnet, verify open ports and services:
+	- [ ] enumerate valid users (both AD via `--users` and locally via `--rid-brute`)
+	- [ ] try `asreproasting` and `kerberoasting` 
+	- [ ] password spray valid users with harvested creds
+	- [ ] enumerate shares on entire subnet 
+	- [ ] writable share? try forced auth with `ntlm-theft`!
+	- [ ] enumerate for `Printnightmare`
+	- [ ] enumerate for `Coerce attacks`
+	- [ ] run `bloodhound` (check each pwned user individually)
+	- [ ] run `ldapdomaindump` (gain situational awareness about the domain)
+	- [ ] check for `DACL rights` with compromised user on accounts of interest
+		- [ ] `RBCD` for computers
+		- [ ] Nested groups 
+		- [ ] Change user password
+		- [ ] others 
+	- [ ] enumerate `GPOs` with `bloodhound` + `Get-GPO`
+	- [ ] enumerate `DNS` for new targets
+	- [ ] forced authentication with `writable shares`
+	- [ ] verify `SYSVOL` for passwords
+	- [ ] look for `MSSQL` instances, verify access, try forging a `Silver Ticket` for additional loot (use `impacket-mssqlclient`, while inside enumerate dbs, impersonation, etc)!
+- use situational awareness, and don't look for `m4st3r h4x0r exploits` ... harvest&spray creds, identify exploitation paths, rinse and repeat for the win! 
+- if there are none seemingly possible escalation paths, it means you probably missed a password somewhere! 
+- KISS :* !!!
