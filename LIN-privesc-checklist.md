@@ -1,0 +1,38 @@
+- here's how you get root boi (or gurl)! 
+- [ ] `sudo -l`
+- [ ] Kernel and distribution release details -> `kernel exploits`
+- [ ]  System Information:
+    - [ ] Hostname 
+    - [ ] Networking details 
+    - [ ] User Information (current user, all users, root accounts)
+    - [ ] Last or currently logged on users
+    - [ ] Checks if password hashes are stored in /etc/passwd
+    - [ ] Attempt to read restricted files i.e. /etc/shadow
+    - [ ] List current users history files (i.e .bash_history, .nano_history, .mysql_history)
+    - [ ] Display current $PATH
+    - [ ] List all cron jobs
+    - [ ] List network connections (TCP & UDP)
+    - [ ] List running processes
+    - [ ] Lookup and list process binaries and associated permissions
+    - [ ] Verify versions of running software for exploits (`sudo`, `mysql`, `psql`, `nginx`)
+    - [ ] Default/Weak Credentials in running internal services 
+    - [ ] Enumerate files with unusual permissions in `/etc`
+- [ ] Privileged access:
+    - [ ] Determine if /etc/sudoers is accessible
+    - [ ] Determine if the current user has Sudo access without a password
+    - [ ] Are known 'GTFO' breakout binaries available via Sudo (i.e. nmap, vim etc.)
+    - [ ] Is root's home directory accessible
+    - [ ] List permissions for /home/
+- [ ] Searches:
+    - [ ] Locate all SUID/GUID files
+    - [ ] Locate files with POSIX capabilities
+    - [ ] List all world-writable files
+    - [ ] Find/list all accessible *.plan files and display contents
+    - [ ]  Find/list all accessible *.rhosts files and display contents
+    - [ ] Show NFS server details
+    - [ ] Locate _.conf and_.log files containing keyword supplied at script runtime
+    - [ ] Locate mail
+- [ ] Platform/software specific tests:
+    - [ ] Checks to determine if we're in a Docker container
+    - [ ] Checks to see if the host has Docker installed
+    - [ ] Checks to determine if we're in an LXC container
