@@ -38,7 +38,6 @@
 		- [ ] others 
 	- [ ] enumerate `GPOs` with `bloodhound` + `Get-GPO`
 	- [ ] enumerate `DNS` for new targets
-	- [ ] forced authentication with `writable shares`
 	- [ ] verify `SYSVOL` for passwords
 	- [ ] look for `MSSQL` instances, verify access, try forging a `Silver Ticket` for additional loot (use `impacket-mssqlclient`, while inside enumerate dbs, impersonation, etc)!
 - use situational awareness, and don't look for `m4st3r h4x0r exploits` ... harvest&spray creds, identify exploitation paths, rinse and repeat for the win! 
