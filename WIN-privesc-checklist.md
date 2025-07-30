@@ -1,0 +1,39 @@
+- okay, so you landed as low lever user on a Windows box... i got you!
+- follow these simple steps to exhaust your options:
+- [ ] `whoami /priv`
+	- [ ] User and group enumeration (`whoami /all`, `net user` )
+	- [ ] System enumeration (`systeminfo`, patches, arch, `env`'s, drives)
+	- [ ] Network enumeration (`ipconfig`, `route`, `arp`, `netstat`, `net share`, `SNMP`)
+	- [ ] harvest credentials 
+		- [ ] Powershell scripts, history (`psreadline`, other methods)
+		- [ ] Command history (`doskey /history`)
+		- [ ] Credential manager (`cmdkey /list`)
+		- [ ] Registry entries (`reg query`)
+		- [ ] Sensitive files (`docx`, `txt`, others)
+		- [ ] Programs, services and their config files (`inetpub`/`Program Files`/others)
+		- [ ] Internal databases with credentials inside (`netstat`/`mysqldump.exe`, etc.)
+		- [ ] Password databases (`kdbx`)
+		- [ ] Filesystem (`c:\users\dave\passwords.txt`, etc.)
+		- [ ] Users `%APPDATA%` with config files or others
+		- [ ] Recycle bin (`$Recycle.Bin`)
+		- [ ] `Unattend.xml` files with b64 passwords
+		- [ ] Wifi passwords via `netsh`
+		- [ ] `Sticky Notes` passwords
+		- [ ] Look for alternate data streams
+		- [ ] Password stored in saved sessions (`PuTTY`, `WinSCP`, `FileZilla`, others)
+		- [ ] (admin req.) dump `SAM`, `LSA`, `LSASS`, `DPAPI`, `LAPS` others 
+		- [ ] (admin req.) look for `--loggedon-users` and try to impersonate
+		- [ ] (GUI req.) Passwords stored in Key Manager
+	- [ ] Privilege escalation vectors:
+		- [ ] Enumerate system processes 
+		- [ ] Enumerate system services
+		- [ ] List installed programs for CVE's
+		- [ ] Enumerate scheduled tasks
+		- [ ] Enumerate Startup tasks
+		- [ ] Query for `AlwaysInstallElevated` values
+		- [ ] Writable `Autorun` directory (`admin` logon triggers it)
+		- [ ] Enumerate `$PATH` for exploitable writable folders
+		- [ ] Look for misconfigured privileges on binaries
+		- [ ] Look for potential DLL hijacking 
+		- [ ] Check kernel version for exploits
+		- [ ] Enumerate WSL
