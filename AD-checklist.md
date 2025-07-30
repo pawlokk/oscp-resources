@@ -1,7 +1,7 @@
 - [ ] run nmap scan on the external host and identify valid protocols
 - [ ] identify entry points with given creds (`smb`/`winrm`/`wmi`/others)
 - get inside the host:
-	- [ ]  run tunneling with ligolo-ng
+	- [ ]  run tunneling with ligolo-ng, then hunt for creds:
 		- [ ] Powershell scripts, history (`psreadline`, other methods)
 		- [ ] Command history (`doskey /history`)
 		- [ ] Credential manager (`cmdkey /list`)
@@ -29,7 +29,7 @@
 	- [ ] writable share? try forced auth with `ntlm-theft`!
 	- [ ] enumerate for `Printnightmare`
 	- [ ] enumerate for `Coerce attacks`
-	- [ ] run `bloodhound` (check each pwned user individually)
+	- [ ] run `bloodhound` (check each pwned user individually for controlled objects)
 	- [ ] run `ldapdomaindump` (gain situational awareness about the domain)
 	- [ ] check for `DACL rights` with compromised user on accounts of interest
 		- [ ] `RBCD` for computers
